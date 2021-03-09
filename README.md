@@ -8,3 +8,4 @@ Steps:
 - Upload relevant data to a MySQL Database
 - Analyze data using clustering/classification techniques
 - Predict winners
+- Create webpage or GUI that can show completed bracket
