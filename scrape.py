@@ -1,8 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
-year = ""
-url = "https://www.sports-reference.com/cbb/postseason/2019-ncaa.html"
+year = "2019"
+url = "https://www.sports-reference.com/cbb/postseason/" + year + "-ncaa.html"
 games =[]
 
 page = requests.get(url)
@@ -12,7 +12,7 @@ east = soup.find(id="east")
 east_results = east.find(id="bracket")
 #print(results.prettify())
 
-def get_losers():
+"""def get_losers():
     teams = results.find_all("div", class_="")
     for team in teams:
         games.append(team)
@@ -22,11 +22,14 @@ def get_losers():
 def get_winners():
     winners = []
     teams = results.find_all("div", class_="winner")
-    #for i in teams:
-    #    winners.append(i)
+    for i in teams:
+        winners.append(i)
     for team in teams:
         names = teams.find("a")["href"]
     return names
+"""
+
+
 """
 a = east_results.find_all('a')
 del a[4::5]
@@ -66,10 +69,7 @@ d = south_results.find_all('a')
 del d[4::5]
 for i in d:
     z.append(i.string)
-#print(z)
 
-q = str(z[0].string)
-w = int(z[1].string)
 qq = z[::2]
 ww = z[1::2]
 
@@ -87,8 +87,22 @@ while x < len(qq) and x < len(ww):
     x += 2
 
 p = 0
-while p < len(arr1):
-    print(arr1[p],arr2[p])
-    p += 1 
+#while p < len(arr1):
+#    print(arr1[p],arr2[p])
+#    p += 1 
 
 south_teams = set(qq)
+
+ 
+n = []
+g = d[::2]
+for i in g:
+    n.append(i["href"])
+n = set(n)
+n = sorted(n)
+for i in n:
+    print(i)
+
+# Create teams dictionary with { team : team_url }
+
+master_teams = [] # put all teams in here
