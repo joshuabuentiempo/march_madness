@@ -59,9 +59,36 @@ del c[4::5]
 for i in c:
     print(i.string)
 """
+z = []
 south = soup.find(id="south")
 south_results = south.find(id="bracket")
 d = south_results.find_all('a')
 del d[4::5]
 for i in d:
-    print(i.string)
+    z.append(i.string)
+#print(z)
+
+q = str(z[0].string)
+w = int(z[1].string)
+qq = z[::2]
+ww = z[1::2]
+
+arr1 = []
+arr2 = []
+
+i = 0
+while i < len(qq) and i < len(ww):
+    arr1.append([qq[i], ww[i]])
+    i += 2
+
+x = 1
+while x < len(qq) and x < len(ww):
+    arr2.append([qq[x], ww[x]])
+    x += 2
+
+p = 0
+while p < len(arr1):
+    print(arr1[p],arr2[p])
+    p += 1 
+
+south_teams = set(qq)
