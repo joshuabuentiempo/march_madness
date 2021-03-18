@@ -149,10 +149,13 @@ south_g = south_a[::2]
 g = east_g + west_g + midwest_g + south_g
 for i in g:
     team_dict.update({ i.string : "https://www.sports-reference.com"+i["href"]})
-for key, value in team_dict.items():
-    print(key , " : ", value)
+#for key, value in team_dict.items():
+#    print(key , " : ", value)
 
 # masterlist of teams
 master_teams = east_teams.union(west_teams.union(midwest_teams.union(south_teams)))
 #for i in master_teams:
 #    print(i)
+
+def get_teams():
+    return team_dict

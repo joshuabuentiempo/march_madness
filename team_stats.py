@@ -29,7 +29,7 @@ def get_stats(team, url):
     tov = float(x[18].string)
     pf = float(x[19].string)
     pts = float(x[20].string)
-    return([team , fg, fga, fg_pct, fg2, 
+    return([team, fg, fga, fg_pct, fg2, 
             fg2a, fg2_pct, fg3, fg3a, fg3_pct, 
             ft, fta, ft_pct, oreb, dreb, treb, 
             ast, stl, blk, tov, pf, pts])
@@ -37,9 +37,6 @@ def get_stats(team, url):
 #get_stats("Liberty", "https://www.sports-reference.com/cbb/schools/liberty/2019.html")
 #get_stats("Duke", "https://www.sports-reference.com/cbb/schools/duke/2019.html")
 #get_stats("Maryland", "https://www.sports-reference.com/cbb/schools/maryland/2019.html")
-
-
-
 
 """if i.get("data-stat") == "fga_per_g":
             fga = i.string
