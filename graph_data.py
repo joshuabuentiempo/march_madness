@@ -4,8 +4,10 @@ import pull_data
 
 var = ["fg", "fga", "fg_pct", "fg2", "fg2a", "fg2_pct", "fg3", "fg3a", "fg3_pct", "ft", "fta", "ft_pct", "oreb", "dreb", "treb", "ast", "stl", "blk", "tov", "pf", "pts"]
 
-var1 = "fta"
-var2 = "stl"
+var1 = "fg3"
+var2 = "treb"
+
+#fg3, treb
 
 a = pull_data.get_graph(var1, var2)
 """
