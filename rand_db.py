@@ -8,7 +8,9 @@ mydb = mysql.connector.connect (
 )
 
 mycursor = mydb.cursor()
-sql = "SELECT * FROM stats"
+sql = "SELECT * FROM diff"
+#sql = "SHOW TABLES"
+#sql = "DROP TABLE diff"
 mycursor.execute(sql)
 
 result = mycursor.fetchall()

@@ -159,3 +159,9 @@ master_teams = east_teams.union(west_teams.union(midwest_teams.union(south_teams
 
 def get_teams():
     return team_dict
+
+team_a = east_arr1 + west_arr1 + midwest_arr1 + south_arr1
+team_b = east_arr2 + west_arr2 + midwest_arr2 + south_arr2
+
+def games():
+    return [team_a, team_b]
