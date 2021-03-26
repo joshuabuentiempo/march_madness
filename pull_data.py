@@ -26,8 +26,16 @@ def get_data(a, b):
     result = mycursor.fetchall()
     return result
 
-def get_graph(c, d):
+def get_graph_data(c):
+    sql = "SELECT outcome, " + c + " FROM diff"
+    mycursor.execute(sql)
+    result = mycursor.fetchall()
+    return result
+
+"""
+def get_graph_data(c, d):
     sql = "SELECT outcome, " + c + ", " + d + " FROM diff"
     mycursor.execute(sql)
     result = mycursor.fetchall()
     return result
+"""
