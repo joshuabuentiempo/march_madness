@@ -62,6 +62,31 @@ def send_data(x):
 
     return x_arr, y_arr
 
+def send_data_2(x):
+    a = pull_data.get_graph_data_2(x)
+
+    var_arr = []
+    for i in a:
+        b = list(i)
+        if i[0] == "W":
+            b[0] = 1
+            var_arr.append(b)
+        else:
+            b[0] = 0
+            var_arr.append(b)
+
+    y_arr = []
+    for i in var_arr:
+        y_arr.append(i[0])
+    y_arr = np.array(y_arr)
+    
+    x_arr = []
+    for i in var_arr:
+        x_arr.append(i[1])
+    x_arr = np.array(x_arr)
+
+    return x_arr, y_arr
+
 
 """
 fg3, treb

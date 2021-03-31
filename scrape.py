@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-year = "2019"
+year = "2018"
 url = "https://www.sports-reference.com/cbb/postseason/" + year + "-ncaa.html"
 games =[]
 

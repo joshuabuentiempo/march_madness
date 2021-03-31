@@ -20,7 +20,7 @@ for x in result:
 mycursor = mydb.cursor()
 
 def get_data(a, b):
-    sql = "SELECT * FROM stats WHERE team = %s OR team = %s"
+    sql = "SELECT * FROM stats2018 WHERE team = %s OR team = %s"
     val = (a, b)
     mycursor.execute(sql, val)
     result = mycursor.fetchall()
@@ -28,6 +28,12 @@ def get_data(a, b):
 
 def get_graph_data(c):
     sql = "SELECT outcome, " + c + " FROM diff"
+    mycursor.execute(sql)
+    result = mycursor.fetchall()
+    return result
+
+def get_graph_data_2(c):
+    sql = "SELECT outcome, " + c + " FROM diff2018"
     mycursor.execute(sql)
     result = mycursor.fetchall()
     return result

@@ -30,7 +30,7 @@ while i < len(ref):
     d2_stat = d2[1:len(d2)]
     x = 0
     diff = []
-    sql = "INSERT INTO diff (outcome, fg, fga, fg_pct, fg2, fg2a, fg2_pct, fg3, fg3a, fg3_pct, ft, fta, ft_pct, oreb, dreb, treb, ast, stl, blk, tov, pf, pts) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+    sql = "INSERT INTO diff2018 (outcome, fg, fga, fg_pct, fg2, fg2a, fg2_pct, fg3, fg3a, fg3_pct, ft, fta, ft_pct, oreb, dreb, treb, ast, stl, blk, tov, pf, pts) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
     while x < len(d1_stat):
         diff.append(round(d1_stat[x] - d2_stat[x], 3))
         x += 1
