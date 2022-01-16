@@ -4,7 +4,7 @@ This project involves predicting a March Madness Bracket.
 
 
 Steps:
-- Create a webscraper using python to pull team statitstics for each particpating team in the March Madness basketball tournament and game results (who won/lost) for each game       played (starting in 2010 to 2019)
+- Create a webscraper using python to pull team statitstics for each particpating team in the March Madness basketball tournament and game results (who won/lost) for each game       played (starting in 2010 to 2018)
 - Store relevant data into MySQL Database:
     Master db for team data -> year, team, teamID, team_stats.....
     Master db for game data -> year, gameID, winner (teamID), loser (teamID)
