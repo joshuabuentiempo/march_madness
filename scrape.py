@@ -63,11 +63,6 @@ while yr < 9:
             yr_teams.append(a)
             c += 1
 
-    aa = 0
-    while aa < len(team_a):
-        #print(team_a[aa], team_b[aa])
-        aa += 1
-
     for i in yr_teams:
         teams.append(i)
     yr_teams.clear()
@@ -75,7 +70,7 @@ while yr < 9:
     yr += 1
 
 def get_teams():
-    return set(z)
+    return set(teams)
 
 
 def games():
