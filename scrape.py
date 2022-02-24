@@ -1,5 +1,5 @@
 
-# scrapes the data and creates a tuple with (team)
+# scrapes the data and creates a tuple with team data and game data
 
 import requests
 from bs4 import BeautifulSoup
