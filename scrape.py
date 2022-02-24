@@ -1,7 +1,11 @@
+
+# scrapes the data and creates a tuple with (team)
+
 import requests
 from bs4 import BeautifulSoup
 
 teams = []
+games = []
 
 yr = 2
 while yr < 9:
@@ -19,22 +23,22 @@ while yr < 9:
     for a in regions:
         regional_data = soup.find(id=a)
         regional_bracket = regional_data.find(id="bracket")
-        games = regional_bracket.find_all('a')
+        regional_games = regional_bracket.find_all('a')
 
-        del games[4::5]
+        del regional_games[4::5]
 
         #url
         site = []
-        for i in games[::2]:
+        for i in regional_games[::2]:
             site.append(i["href"])
 
         i = 0
-        while i < len(games):
-            games[i] = games[i].string
+        while i < len(regional_games):
+            regional_games[i] = regional_games[i].string
             i += 1
 
-        bracket_teams = games[::2]
-        bracket_scores = games[1::2]
+        bracket_teams = regional_games[::2]
+        bracket_scores = regional_games[1::2]
 
         arr1 = [] # [team, score] for each "top" team
         arr2 = [] # [team, score] for each "bottom" team
@@ -67,11 +71,18 @@ while yr < 9:
         teams.append(i)
     yr_teams.clear()
 
+    i = 0
+    while i < len(team_a):
+        games.append((team_a[i], team_b[i], "201" + str(yr)))
+        i += 1
+
     yr += 1
+
+
 
 def get_teams():
     return set(teams)
 
 
-def games():
-    return [team_as, team_bs]
+def get_games():
+    return games
