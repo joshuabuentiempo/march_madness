@@ -15,7 +15,7 @@ sql = "INSERT INTO teams (team, year, fg, fga, fg_pct, fg2, fg2a, fg2_pct, fg3, 
 teams = scrape.get_teams()      # get array of teams
 for i in teams:
     b = team_stats.get_stats(i[2])
-    team_values = (i[0], i[1], b[0], b[1], b[2], b[3], b[4], b[5], b[6], b[7], b[8], b[9], b[10], b[11], b[12], b[13], b[14], b[15], b[16], b[17], b[18], b[19], b[20])       # team_name, year, stats ... 
+    team_values = (i[0], i[1], b[0], b[1], b[2], b[3], b[4], b[5], b[6], b[7], b[8], b[9], b[10], b[11], b[12], b[13], b[14], b[15], b[16], b[17], b[18], b[19], b[20])      # team_name, year, stats... 
     mycursor.execute(sql, team_values)
 
 mydb.commit()

@@ -27,7 +27,6 @@ while yr <= 9:      # get 2012 to 2019 data for training
 
         del regional_games[4::5]
 
-        #url
         site = []
         for i in regional_games[::2]:
             site.append(i["href"])
@@ -40,8 +39,8 @@ while yr <= 9:      # get 2012 to 2019 data for training
         bracket_teams = regional_games[::2]
         bracket_scores = regional_games[1::2]
 
-        arr1 = [] # [team, score] for each "top" team
-        arr2 = [] # [team, score] for each "bottom" team
+        arr1 = []      # [team, score] for each "top" team
+        arr2 = []      # [team, score] for each "bottom" team
         
         a = 0
         while a < len(bracket_teams) and a < len(bracket_scores):
