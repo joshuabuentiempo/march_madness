@@ -8,7 +8,7 @@ teams = []
 games = []
 
 yr = 2
-while yr < 9:
+while yr <= 9:      # get 2012 to 2019 data for training
     year = "201" + str(yr)
     url = "https://www.sports-reference.com/cbb/postseason/" + year + "-ncaa.html"
 
@@ -23,7 +23,7 @@ while yr < 9:
     for a in regions:
         regional_data = soup.find(id=a)
         regional_bracket = regional_data.find(id="bracket")
-        regional_games = regional_bracket.find_all('a')
+        regional_games = regional_bracket.find_all("a")
 
         del regional_games[4::5]
 
@@ -81,6 +81,9 @@ while yr < 9:
 
 
 def get_teams():
+    #for i in set(teams):
+        #print(i)
+    #print(len(set(teams)))
     return set(teams)
 
 
