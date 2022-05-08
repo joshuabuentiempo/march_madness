@@ -1,3 +1,5 @@
+"""
+
 import scrape
 import team_stats
 
@@ -12,7 +14,9 @@ for i in x:
     print(i[2], i[0][0], i[1][0], i[0][1], i[1][1])
 
 
-"""
+
+
+
 for i in a:
     print(i[0], i[1], team_stats.get_stats(i[2]))
 
@@ -25,7 +29,7 @@ while x <= len(b):
 
 ########################################################################################################################################## Check databases
 
-"""
+
 import mysql.connector
 
 mydb = mysql.connector.connect (
@@ -36,13 +40,12 @@ mydb = mysql.connector.connect (
 )
 
 mycursor = mydb.cursor()
-#sql = "SELECT * FROM diff2018"
-sql = "SHOW TABLES"
-#sql = "DROP TABLE diff"
+sql = "SELECT * FROM teams"
+#sql = "SHOW TABLES"
+#sql = "DROP TABLE games"
 mycursor.execute(sql)
 
 result = mycursor.fetchall()
 
 for x in result:
     print(x)
-"""
