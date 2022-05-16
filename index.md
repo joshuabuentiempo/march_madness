@@ -68,7 +68,7 @@ Games table stored all of the game data
 
 ### Methodology
 
-** Data Visualizations **
+**Data Visualizations**
 Utilized Matplolib package to graph the data for each variable
 
 ex. PTS difference graph
