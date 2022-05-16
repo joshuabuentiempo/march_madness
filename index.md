@@ -39,7 +39,7 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
 
 # March Madness Bracket Predictor
 
-### Webscraping
+## Webscraping
 
 Used the BeautifulSoup4 library to scrape data from https://www.sports-reference.com/cbb/
 
@@ -52,4 +52,28 @@ Game data was pulled from each year's bracket page
 ex. https://www.sports-reference.com/cbb/postseason/2018-ncaa.html
 
 
+## MySQL database
+
+The scraped data was then stored into 2 different tables
+
+Teams table stored all of the team data
+[Link](url) and ![Image](src)
+
+
+Games table stored all of the game data
+[Link](url) and ![Image](src)
+
+
+## Analysis
+
+### Methodology
+
+** Data Visualizations **
+Utilized Matplolib package to graph the data for each variable
+
+ex. PTS difference graph
+[Link](url) and ![Image](src)
+
+ex. stl difference graph
+[Link](url) and ![Image](src)
 
