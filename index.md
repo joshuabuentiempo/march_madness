@@ -35,3 +35,21 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+
+
+# March Madness Bracket Predictor
+
+### Webscraping
+
+Used the BeautifulSoup4 library to scrape data from https://www.sports-reference.com/cbb/
+
+Team data was pulled by from each participating team's page (for the given year) 
+ex. https://www.sports-reference.com/cbb/schools/villanova/2018.html
+
+
+
+Game data was pulled from each year's bracket page
+ex. https://www.sports-reference.com/cbb/postseason/2018-ncaa.html
+
+
+
