@@ -9,6 +9,18 @@ var = ["fg", "fga", "fg_pct", "fg2", "fg2a", "fg2_pct", "fg3", "fg3a", "fg3_pct"
 #fg, fga, fg2_pct, ft_pct, oreb, ast, blk, tov
 
 def graph(var1):
+    a = pull_data.difference(var1)
+
+
+    plt.scatter(x_arr, y_arr)
+    plt.xlabel(var1)
+    plt.ylabel("win")
+    plt.show()
+
+
+
+"""
+def graph(var1):
     a = pull_data.get_graph_data(var1)
 
     var_arr = []
@@ -86,7 +98,7 @@ def send_data_2(x):
     x_arr = np.array(x_arr)
 
     return x_arr, y_arr
-
+"""
 
 """
 fg3, treb

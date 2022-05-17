@@ -40,7 +40,7 @@ mydb = mysql.connector.connect (
 )
 
 mycursor = mydb.cursor()
-sql = "SELECT * FROM teams"
+sql = "SELECT * FROM games"
 #sql = "SHOW TABLES"
 #sql = "DROP TABLE games"
 mycursor.execute(sql)
