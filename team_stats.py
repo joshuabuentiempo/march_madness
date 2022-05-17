@@ -36,10 +36,4 @@ def get_stats(url):
 #get_stats("Duke", "https://www.sports-reference.com/cbb/schools/duke/2019.html")
 #get_stats("Maryland", "https://www.sports-reference.com/cbb/schools/maryland/2019.html")
 
-"""if i.get("data-stat") == "fga_per_g":
-            fga = i.string
-        if i.get("data-stat") == "fg_pct":
-            fg_pct = i.string
-        if i.get("data-stat") == "fg2_per_g":
-            fg2 = i.string"""
 
