@@ -25,5 +25,26 @@ def graph(var1):
     plt.ylabel("win")
     plt.show()
 
-print(graph("pts"))
+#print(graph("pts"))
 
+def send_dif(var1):
+    a = pull_data.difference(var1)
+    dif = []
+
+    for i in a:
+        dif.append(i[0])
+    
+    n_dif = np.array(dif)
+
+    return n_dif
+
+def send_outcome(var1):
+    a = pull_data.difference(var1)
+    outcome = []
+
+    for i in a:
+        outcome.append(i[1])
+    
+    n_outcome = np.array(outcome)
+
+    return n_outcome

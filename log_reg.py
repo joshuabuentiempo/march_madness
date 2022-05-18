@@ -1,12 +1,48 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from scipy.special import expit
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
 import graph_data
-import scrape
 
 #fg, fga, fg2_pct, ft_pct, oreb, ast, blk, tov
 
+
+a = graph_data.send_dif("tov")
+
+b = graph_data.send_outcome("tov")
+
+a = a[:, np.newaxis]
+
+print(a)
+print(b)
+
+
+clf = LogisticRegression().fit(a, b)
+
+
+print(clf.intercept_)
+print(clf.coef_)
+print(clf.predict_proba(a))
+
+plt.clf()
+
+plt.scatter(a.ravel(), b, color="black", zorder=20)
+X_test = np.linspace(-9, 9)
+
+loss = expit(X_test * clf.coef_ + clf.intercept_).ravel()
+plt.plot(X_test, loss, color="red", linewidth=2)
+
+
+plt.show()
+
+
+
+
+
+
+
+"""
 a = graph_data.send_data("blk")
 a = np.array(a)
 x = a[0]
@@ -23,6 +59,8 @@ x2_r = x2.reshape(-1,1)
 model = LogisticRegression(solver = "liblinear", random_state = 0)
 model.fit(x_r, y)
 
+"""
+
 #print(model.intercept_)
 #print(model.coef_)
 #print(model.predict_proba(x_r))
@@ -37,6 +75,7 @@ print(model.score(x2_r, y2))
 """
 #print(classification_report(y, model.predict(x_r)))
 
+"""
 games = scrape.games()
 
 pred = model.predict(x2_r)
@@ -50,6 +89,8 @@ while i < len(z1):
     else:
         print(z2[i])
     i += 1 
+
+"""
 
 """
 56% fg
