@@ -1,3 +1,5 @@
+# Parse website for inputted team and return their statistics
+
 import requests
 from bs4 import BeautifulSoup
 

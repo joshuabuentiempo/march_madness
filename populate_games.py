@@ -13,6 +13,7 @@ mycursor = mydb.cursor()
 
 sql2 = "INSERT INTO games (year, team_a, team_b, score_a, score_b, winner) VALUES (%s,%s,%s,%s,%s,%s)"
 games = scrape.get_games()      # get array of games
+
 for i in games:
     if i[0][1] > i[1][1]:
         game_values = (i[2], i[0][0], i[1][0], i[0][1], i[1][1], i[0][0])

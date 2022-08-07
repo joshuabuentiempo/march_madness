@@ -54,6 +54,7 @@ for x in result:
 
 ###########################################################################################
 
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -90,4 +91,7 @@ plt.show()
 
 
 
+"""
 
+for i in range(2012, 2022):
+    print(i)
