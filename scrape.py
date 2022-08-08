@@ -2,6 +2,7 @@
 # Gives a set of all teams participating
 # Gives a set of all games played
 
+from email.errors import HeaderDefect
 import requests
 from bs4 import BeautifulSoup
 
@@ -28,6 +29,7 @@ for y in range(2012, 2023):  # get 2012 to 2019 data for training
             regional_bracket = regional_data.find(id="bracket")
             regional_games = regional_bracket.find_all("a")
             regional_games.pop(len(regional_games) - 1)
+
 
             for i in range(0, len(regional_games)):
                 regional_games[i] = (regional_games[i].string, regional_games[i])
@@ -63,6 +65,7 @@ for y in range(2012, 2023):  # get 2012 to 2019 data for training
             bracket_teams = regional_games[::2]
             bracket_scores = regional_games[1::2]
 
+
             arr1 = []      # [team, score] for each "top" team
             arr2 = []      # [team, score] for each "bottom" team
                        
@@ -87,7 +90,7 @@ for y in range(2012, 2023):  # get 2012 to 2019 data for training
 
             c = 0
             while c < len(bracket_teams):
-                a = (bracket_teams[c][0], year, bracket_teams[c][1])
+                a = (bracket_teams[c][0], year, bracket_teams[c][1].get("href"))
                 yr_teams.append(a)
                 c += 1
 
@@ -102,9 +105,6 @@ for y in range(2012, 2023):  # get 2012 to 2019 data for training
         
 
 def get_teams():
-    #for i in set(teams):
-        #print(i)
-    #print(len(set(teams)))
     return set(teams)
 
 
