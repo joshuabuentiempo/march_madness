@@ -40,17 +40,17 @@ mydb = mysql.connector.connect (
 )
 
 mycursor = mydb.cursor()
-sql = "SELECT * FROM games"
-#sql = "SHOW TABLES"
-#sql = "DROP TABLE games"
+#sql = "SELECT * FROM games"
+sql = "SHOW TABLES"
+#sql = "DROP TABLE teams"
 mycursor.execute(sql)
 
 result = mycursor.fetchall()
 
 for x in result:
     print(x)
-"""
 
+"""
 
 ###########################################################################################
 
@@ -92,6 +92,3 @@ plt.show()
 
 
 """
-
-for i in range(2012, 2022):
-    print(i)

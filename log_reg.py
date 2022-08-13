@@ -5,37 +5,50 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
 import graph_data
 
-#fg, fga, fg2_pct, ft_pct, oreb, ast, blk, tov
+var = ["fg", "fga", "fg_pct", "fg2", "fg2a", "fg2_pct", "fg3", "fg3a", "fg3_pct", "ft", "fta", "ft_pct", "oreb", "dreb", "treb", "ast", "stl", "blk", "tov", "pf", "pts"]
+
+for i in var:
+    print(i)
+    x = graph_data.send_dif(i, 1)
+    y = graph_data.send_outcome(i, 1)
+
+    x = x[:, np.newaxis]
+
+    clf = LogisticRegression().fit(x, y)
 
 
-a = graph_data.send_dif("tov")
-
-b = graph_data.send_outcome("tov")
-
-a = a[:, np.newaxis]
-
-print(a)
-print(b)
+    print(clf.intercept_)
+    print(clf.coef_)
 
 
-clf = LogisticRegression().fit(a, b)
+    x_test = graph_data.send_dif(i, 0)
+    y_true = graph_data.send_outcome(i, 0)
+
+    x_test = x_test[:, np.newaxis]
+
+    pred = clf.predict(x_test)
+
+    #for i in range(0, len(pred)):
+    #    print(pred[i], y_test[i])
 
 
-print(clf.intercept_)
-print(clf.coef_)
-print(clf.predict_proba(a))
+    print(clf.score(x_test, y_true))
+    print("###############################################")
 
+
+
+"""
 plt.clf()
 
 plt.scatter(a.ravel(), b, color="black", zorder=20)
-X_test = np.linspace(-9, 9)
+X_test = np.linspace(-8, 8)
 
 loss = expit(X_test * clf.coef_ + clf.intercept_).ravel()
 plt.plot(X_test, loss, color="red", linewidth=2)
 
 
 plt.show()
-
+"""
 
 
 

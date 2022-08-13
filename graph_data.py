@@ -5,8 +5,8 @@ import pull_data
 var = ["fg", "fga", "fg_pct", "fg2", "fg2a", "fg2_pct", "fg3", "fg3a", "fg3_pct", "ft", "fta", "ft_pct", "oreb", "dreb", "treb", "ast", "stl", "blk", "tov", "pf", "pts"]
 
 
-def graph(var1):
-    a = pull_data.difference(var1)
+def graph(var1, train):
+    a = pull_data.difference(var1, train)
     dif = []
     outcome = []
 
@@ -27,8 +27,8 @@ def graph(var1):
 
 #print(graph("pts"))
 
-def send_dif(var1):
-    a = pull_data.difference(var1)
+def send_dif(var1, train):
+    a = pull_data.difference(var1, train)
     dif = []
 
     for i in a:
@@ -38,8 +38,8 @@ def send_dif(var1):
 
     return n_dif
 
-def send_outcome(var1):
-    a = pull_data.difference(var1)
+def send_outcome(var1, train):
+    a = pull_data.difference(var1, train)
     outcome = []
 
     for i in a:

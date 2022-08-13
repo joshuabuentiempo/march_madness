@@ -1,5 +1,4 @@
 import scrape
-import team_stats
 import mysql.connector
 
 mydb = mysql.connector.connect (

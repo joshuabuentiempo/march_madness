@@ -10,8 +10,11 @@ mydb = mysql.connector.connect (
 
 mycursor = mydb.cursor()
 
-def difference(stat):
-    sql = "SELECT * FROM games"
+def difference(stat, train):
+    if train == 1:
+        sql = "SELECT * FROM games WHERE year < 2020"
+    else:
+        sql = "SELECT * FROM games WHERE year > 2020"
     #sql = "SELECT Teamid, team, year, ft, pts FROM teams WHERE team = 'VCU' OR team = 'Duke'"
     mycursor.execute(sql)
 
