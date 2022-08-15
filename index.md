@@ -41,39 +41,58 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
 
 ## Webscraping
 
-Used the BeautifulSoup4 library to scrape data from https://www.sports-reference.com/cbb/
+Used the Python web-scraping library BeautifulSoup4 to scrape data from https://www.sports-reference.com/cbb/.
 
-Team data was pulled by from each participating team's page (for the given year) 
-ex. https://www.sports-reference.com/cbb/schools/villanova/2018.html
-
-
-
-Game data was pulled from each year's bracket page
+Game data was pulled from each bracket starting in 2012 all the way to 2022.
 ex. https://www.sports-reference.com/cbb/postseason/2018-ncaa.html
+
+Each participating team had their season statistics pulled.
+ex. https://www.sports-reference.com/cbb/schools/villanova/2018.html
 
 
 ## MySQL database
 
 The scraped data was then stored into 2 different tables
 
-Teams table stored all of the team data
+"Games" table stored all of the game data (team a, team b, score of team a, score of team b, winner)
 [Link](url) and ![Image](src)
 
-
-Games table stored all of the game data
+"Teams" table stored all statistics for each participating team (fg, fga, ......, pts)
 [Link](url) and ![Image](src)
+
 
 
 ## Analysis
 
-### Methodology
+Each game was analyzed be taking the difference of a statistic from team A and team B. (For this experiment, team A is always the team listed on
+top). For example, let's say team A averaged 28 field goals made per game (fg) while team B only averaged 25 fg, then the difference would be 3.
+(with team A as the reference)
+
+  team A stat - team B stat = stat difference (with respect to the given game)
+
+
+This difference was calculated for every game played and was tested for every team statistic.
+
+### Binary Logistic Regression
+
+To implement a binary logistic regression model,
 
 **Data Visualizations**
-Utilized Matplolib package to graph the data for each variable
+Utilized Matplotlib package to graph the data for each variable
 
 ex. PTS difference graph
 [Link](url) and ![Image](src)
 
 ex. stl difference graph
 [Link](url) and ![Image](src)
+
+
+### Linear Discriminant Analysis
+
+**Data Visualizations**
+
+
+
+## Results
+
 
