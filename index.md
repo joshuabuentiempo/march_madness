@@ -39,6 +39,8 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
 
 # March Madness Bracket Predictor
 
+The goal of this project was to be able to predict the winner of each game in the March Madness tournament.
+
 ## Webscraping
 
 Used the Python web-scraping library BeautifulSoup4 to scrape data from https://www.sports-reference.com/cbb/.
