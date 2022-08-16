@@ -2,7 +2,7 @@
 
 # March Madness Bracket Predictor
 
-The goal of this project was to be able to predict the winner of each game in the March Madness tournament.
+The goal of this project was to predict the winner of each game in future March Madness tournaments. This was achieved by analyzing data on previous tournaments and the respective teams that participated in each, and then creating multiple classification models to determine which team would win. The 2 models that were tested are binary logistic regression and linear discrimannt analysis.
 
 ## Webscraping
 
