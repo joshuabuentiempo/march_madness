@@ -20,10 +20,10 @@ ex. https://www.sports-reference.com/cbb/schools/villanova/2018.html
 The scraped data was then stored into 2 different tables
 
 "Games" table stored all of the game data (team a, team b, score of team a, score of team b, winner)
-[Link](url) and ![Image](src)
+![Image](src)
 
 "Teams" table stored all statistics for each participating team (fg, fga, ......, pts)
-[Link](url) and ![Image](src)
+![Image](src)
 
 
 
