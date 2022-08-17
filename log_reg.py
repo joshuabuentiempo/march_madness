@@ -1,4 +1,3 @@
-import matplotlib.pyplot as plt
 import numpy as np
 from scipy.special import expit
 from sklearn.linear_model import LogisticRegression

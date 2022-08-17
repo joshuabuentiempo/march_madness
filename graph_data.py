@@ -53,8 +53,8 @@ def send_outcome(var1, train):
 
 #def graph_lda(stat1, stat2, train):
 
-stat1 = "pts"
-stat2 = "treb"
+stat1 = "fg"
+stat2 = "fga"
 train = 1
 
 a = pull_data.get_stats(stat1, stat2, train)
