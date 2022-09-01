@@ -51,21 +51,13 @@ This difference was calculated for every game played and was tested for every te
 
 ### Binary Logistic Regression
 
-To implement a binary logistic regression model,
-
-Utilized Matplotlib package to graph the data for each variable
-
-ex. PTS difference graph
-![Image](src)
-
-ex. stl difference graph
-![Image](src)
-
+fg difference graph
+![Figure_log_fg](https://user-images.githubusercontent.com/48895748/187861397-8d5052d7-b6bf-47be-899a-d1d51bc956ff.png)
 
 ### Linear Discriminant Analysis
 
-**Data Visualizations**
-
+pf vs tov difference graph
+![Figure_lda_pf_tov](https://user-images.githubusercontent.com/48895748/187861639-548669c4-0a8e-4811-a25a-cd3b79599a5a.png)
 
 
 ## Results
