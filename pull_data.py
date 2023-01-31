@@ -28,7 +28,7 @@ def get_stats(stat1, stat2, train):
         mycursor.execute(sql_a, val_a)
         result_a.append(mycursor.fetchall()[0])
 
-        sql_b = "SELECT " + stat1 + "," + stat2 +  ",Teamid FROM teams WHERE team = %s AND year = %s"
+        sql_b = "SELECT " + stat1 + "," + stat2 + ",Teamid FROM teams WHERE team = %s AND year = %s"
         val_b = (i[3], i[1])
         mycursor.execute(sql_b, val_b)
         result_b.append(mycursor.fetchall()[0])
