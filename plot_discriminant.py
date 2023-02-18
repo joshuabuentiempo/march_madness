@@ -2,10 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import query
 
-stat1 = ""
-stat2 = ""
+stat1 = "oreb"
+stat2 = "fga"
 
-data = query.get_double_stat(stat1, stat2, 2014, 2014)
+data = query.get_double_stat(stat1, stat2, 2013, 2017)
 
 wins_x = []     #   stat1 differences for winning A teams
 wins_y = []     #   stat2 differences for winning A teams

@@ -57,11 +57,16 @@ def get_double_stat(stat_1, stat_2, year_start, year_end):
         mycursor.execute(sql_b, val_b)
         list_b.append(mycursor.fetchall()[0])
 
+    print(list_a)
+    print(list_b)
+
     data = []
     for i in range(0, len(result)):
         if result[i][6] == result[i][2]:
-            data.append((round(list_a[i][0] - list_b[i][0], 2), round(list_a[i][0] - list_b[i][0], 2), 1))
+            data.append((round(list_a[i][0] - list_b[i][0], 2), round(list_a[i][1] - list_b[i][1], 2), 1))
         else:
-            data.append((round(list_a[i][0] - list_b[i][0], 2), round(list_a[i][0] - list_b[i][0], 2), 0))
+            data.append((round(list_a[i][0] - list_b[i][0], 2), round(list_a[i][1] - list_b[i][1], 2), 0))
+    
+    print(data)
 
     return data
