@@ -4,7 +4,7 @@ import query
 
 stat = "pts"
 
-data = query.get_data(stat, 2012, 2019)
+data = query.get_single_stat(stat, 2012, 2019)
 
 x = []
 y = []
