@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import query
 
-stat = "pts"
+stat = "tov"
 
 data = query.get_single_stat(stat, 2012, 2019)
 
