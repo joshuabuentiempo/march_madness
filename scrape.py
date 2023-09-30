@@ -10,7 +10,7 @@ teams = []
 games = []
 
 
-for y in range(2012, 2023):  # get 2012 to 2019 data for training
+for y in range(2012, 2013):  # get 2012 to 2023 data
     year = str(y)
     if y == 2020:
         pass

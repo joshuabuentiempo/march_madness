@@ -7,7 +7,8 @@ def get_stats(url):
     page = requests.get("https://www.sports-reference.com" + url)
     soup = BeautifulSoup(page.content, "html.parser")
 
-    a = soup.find(id="schools_per_game")
+    a = soup.find(id="switcher_per_game_team")
+    print(a)
     td = a.find_all("td")
     x = td[2:23]
     fg = float(x[0].string)

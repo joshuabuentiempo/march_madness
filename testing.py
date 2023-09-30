@@ -29,7 +29,7 @@ while x <= len(b):
 
 ########################################################################################################################################## Check databases
 
-"""
+
 import mysql.connector
 
 mydb = mysql.connector.connect (
@@ -41,8 +41,8 @@ mydb = mysql.connector.connect (
 
 mycursor = mydb.cursor()
 #sql = "SELECT * FROM games"
-sql = "SHOW TABLES"
-#sql = "DROP TABLE teams"
+#sql = "SHOW TABLES"
+sql = "DELETE FROM teams"
 mycursor.execute(sql)
 
 result = mycursor.fetchall()
@@ -50,7 +50,11 @@ result = mycursor.fetchall()
 for x in result:
     print(x)
 
-"""
+mydb.commit()
+
+print("Success")
+
+
 
 ###########################################################################################
 
