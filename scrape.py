@@ -9,8 +9,7 @@ from bs4 import BeautifulSoup
 teams = []
 games = []
 
-
-for y in range(2012, 2013):  # get 2012 to 2023 data
+for y in range(2023, 2024):  # get 2012 to 2023 data
     year = str(y)
     if y == 2020:
         pass
@@ -30,21 +29,16 @@ for y in range(2012, 2013):  # get 2012 to 2023 data
             regional_games = regional_bracket.find_all("a")
             regional_games.pop(len(regional_games) - 1)
 
-
             for i in range(0, len(regional_games)):
                 regional_games[i] = (regional_games[i].string, regional_games[i])
-
 
             for i in range(0, len(regional_games)):
                 if regional_games[i][0].string.startswith("at"):
                     regional_games[i] = 0
 
-
             for i in regional_games:
                 if i == 0:
                    regional_games.remove(i)
-
-            
 
             for i in range(0, len(regional_games)):
                 regional_games[i] = list(regional_games[i])
@@ -60,11 +54,8 @@ for y in range(2012, 2013):  # get 2012 to 2023 data
 
             regional_games = [i for i in regional_games if i != [0,0]]
 
-
-
             bracket_teams = regional_games[::2]
             bracket_scores = regional_games[1::2]
-
 
             arr1 = []      # [team, score] for each "top" team
             arr2 = []      # [team, score] for each "bottom" team
@@ -78,7 +69,6 @@ for y in range(2012, 2013):  # get 2012 to 2023 data
             while b < len(bracket_teams) and b < len(bracket_scores):
                 arr2.append([bracket_teams[b][0], bracket_scores[b][0]])
                 b += 2
-   
 
             for i in arr1:
                 team_a.append(i)
@@ -105,7 +95,7 @@ for y in range(2012, 2013):  # get 2012 to 2023 data
         
 
 def get_teams():
-    return set(teams)
+    return sorted(list(set(teams)))
 
 
 def get_games():

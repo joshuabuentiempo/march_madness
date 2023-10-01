@@ -1,35 +1,19 @@
 """
-
-import scrape
-import team_stats
-
-
-a = scrape.get_teams()
-b = []
+import requests
+from bs4 import BeautifulSoup
 
 
-x = scrape.get_games()
+page = requests.get("https://www.sports-reference.com/cbb/postseason/2013-ncaa.html")
+soup = BeautifulSoup(page.content, "html.parser")
 
-for i in x:
-    print(i[2], i[0][0], i[1][0], i[0][1], i[1][1])
-
-
-
-
-
-for i in a:
-    print(i[0], i[1], team_stats.get_stats(i[2]))
-
-
-x = 0
-while x <= len(b):
-    print(a[x], b[x])
-    x += 1
+f = open("html_code.txt", "w")
+f.write(soup)
+f.close()
 """
 
 ########################################################################################################################################## Check databases
 
-
+"""
 import mysql.connector
 
 mydb = mysql.connector.connect (
@@ -54,7 +38,7 @@ mydb.commit()
 
 print("Success")
 
-
+"""
 
 ###########################################################################################
 

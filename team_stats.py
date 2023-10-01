@@ -7,8 +7,7 @@ def get_stats(url):
     page = requests.get("https://www.sports-reference.com" + url)
     soup = BeautifulSoup(page.content, "html.parser")
 
-    a = soup.find(id="switcher_per_game_team")
-    print(a)
+    a = soup.find(id="div_season-total_per_game")
     td = a.find_all("td")
     x = td[2:23]
     fg = float(x[0].string)
@@ -35,7 +34,7 @@ def get_stats(url):
     return([fg, fga, fg_pct, fg2, fg2a, fg2_pct, fg3, fg3a, fg3_pct, ft,
             fta, ft_pct, oreb, dreb, treb, ast, stl, blk, tov, pf, pts])
 
-#get_stats("Liberty", "https://www.sports-reference.com/cbb/schools/liberty/2019.html")
+#print(get_stats("/cbb/schools/liberty/2019.html"))
 #get_stats("Duke", "https://www.sports-reference.com/cbb/schools/duke/2019.html")
 #get_stats("Maryland", "https://www.sports-reference.com/cbb/schools/maryland/2019.html")
 
