@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import query
 
-stat = "tov"
+stat = "fg_pct"
 
 data = query.get_single_stat(stat, 2012, 2019)
 
@@ -25,13 +25,12 @@ for i in data:
         win_temp.append(i[0])
     else:
         lose_temp.append(i[0])
-print(win_temp)
-print(lose_temp)
+
 win_mean = sum(win_temp)/len(win_temp)
 print(win_mean)
 lose_mean = sum(lose_temp)/len(lose_temp)
 print(lose_mean)
-print(win_mean - lose_mean)
+print(abs(win_mean - lose_mean))
 
 a = [win_mean, lose_mean]
 b = [1, 0]

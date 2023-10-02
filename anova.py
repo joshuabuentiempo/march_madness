@@ -4,8 +4,8 @@ import pandas as pd
 import numpy as np
 import query
 
-
-stats = ["fg", "fga", "fg_pct", "fg2", "fg2a", "fg2_pct", "fg3", "fg3a", "fg3_pct", "ft", "fta", "ft_pct", "oreb", "dreb", "treb", "ast", "stl", "blk", "tov", "pf", "pts"]
+#stats = ["fg", "fga", "fg_pct", "fg2", "fg2a", "fg2_pct", "fg3", "fg3a", "fg3_pct", "ft", "fta", "ft_pct", "oreb", "dreb", "treb", "ast", "stl", "blk", "tov", "pf", "pts"]
+stats = ["fg", "fga", "fg_pct", "fg2", "fg2a", "fg3", "fg3a", "fg3_pct", "ft", "fta", "ft_pct", "oreb", "dreb", "treb", "ast", "stl", "blk", "tov", "pf", "pts"]
 
 df = pd.DataFrame()
 
@@ -24,12 +24,12 @@ np_outcome = np.array(outcome)
 
 df.to_numpy()
 print(df)
+print(np_outcome)
 
-
-fs = SelectKBest(f_classif, k=4)
+fs = SelectKBest(f_classif, k=5)
 model = fs.fit_transform(df, np_outcome)
 print(fs.get_feature_names_out())
 print(model)
 
 
-#   "fg", "fg_pct", "tov", "pf", "pts"
+#   ['pf' 'tov' 'blk' 'fg_pct' 'fg']

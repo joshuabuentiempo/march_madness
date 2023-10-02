@@ -1,12 +1,10 @@
 import numpy as np
 import pandas as pd
-from scipy.special import expit
-from sklearn.linear_model import LogisticRegression
+from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 from sklearn.metrics import classification_report
 import query
 
-stats = ['pf','tov','blk','fg_pct','fg']
-#stats = ['fg']
+stats = ["fg", "fga", "fg_pct", "fg2", "fg2a", "fg2_pct", "fg3", "fg3a", "fg3_pct", "ft", "fta", "ft_pct", "oreb", "dreb", "treb", "ast", "stl", "blk", "tov", "pf", "pts"]
 
 train_df = pd.DataFrame()
 test_df = pd.DataFrame()
@@ -33,13 +31,14 @@ x_test = test_df.to_numpy()
 y_train = y_train[:x_train.shape[0]]
 y_test = y_test[:x_test.shape[0]]
 
-log_reg = LogisticRegression()
-log_reg.fit(x_train, y_train)
+qda = QuadraticDiscriminantAnalysis()
+qda.fit(x_train, y_train)
 print(str(stats))
-print(log_reg.score(x_test, y_test))
+print(qda.score(x_test, y_test))
 
-gg = log_reg.predict(x_test)
-qq = log_reg.predict_log_proba(x_test)
+gg = qda.predict(x_test)
+qq = qda.predict_log_proba(x_test)
 print("probabilities: " + str(qq))
 print("predicted: " + str(gg))
 print("actual: " + str(y_test))
+

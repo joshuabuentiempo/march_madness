@@ -1,21 +1,44 @@
 import numpy as np
+import pandas as pd
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-import pull_data
+from sklearn.metrics import classification_report
+import query
 
-var = ["fg", "fga", "fg_pct", "fg2", "fg2a", "fg2_pct", "fg3", "fg3a", "fg3_pct", "ft", "fta", "ft_pct", "oreb", "dreb", "treb", "ast", "stl", "blk", "tov", "pf", "pts"]
+stats = ["fg", "fga", "fg_pct", "fg2", "fg2a", "fg2_pct", "fg3", "fg3a", "fg3_pct", "ft", "fta", "ft_pct", "oreb", "dreb", "treb", "ast", "stl", "blk", "tov", "pf", "pts"]
 
-xy_diff = []
-result = []
+train_df = pd.DataFrame()
+test_df = pd.DataFrame()
+y_train = np.array([])
+y_test = np.array([])
 
-a = pull_data.get_stats(var[0], var[1], 1)
+for i in stats:
+    train_data = query.get_single_stat(i, 2012, 2019)
+    test_data = query.get_single_stat(i, 2023, 2023)
+    train_diff = []
+    test_diff = []
+    for j in train_data:
+        train_diff.append(j[0])
+        y_train = np.append(y_train, j[1])
+    for k in test_data:
+        test_diff.append(k[0])
+        y_test = np.append(y_test, k[1])
+    train_df.insert(0, i, train_diff)
+    test_df.insert(0, i, test_diff)
 
-for i in a:
-    xy_diff.append([i[0], i[1]])
-    result.append(i[2])
+x_train = train_df.to_numpy()
+x_test = test_df.to_numpy()
 
-np_xy_diff = np.array(xy_diff)
-np_result = np.array(result)
+y_train = y_train[:x_train.shape[0]]
+y_test = y_test[:x_test.shape[0]]
 
-clf = LinearDiscriminantAnalysis().fit(np_xy_diff, np_result)
+lda = LinearDiscriminantAnalysis()
+lda.fit(x_train, y_train)
+print(str(stats))
+print(lda.score(x_test, y_test))
 
-print(clf.predict([[-6, -6]]))
+gg = lda.predict(x_test)
+qq = lda.predict_log_proba(x_test)
+print("probabilities: " + str(qq))
+print("predicted: " + str(gg))
+print("actual: " + str(y_test))
+
