@@ -5,15 +5,17 @@ from sklearn.metrics import classification_report
 import query
 
 stats = ["fg", "fga", "fg_pct", "fg2", "fg2a", "fg2_pct", "fg3", "fg3a", "fg3_pct", "ft", "fta", "ft_pct", "oreb", "dreb", "treb", "ast", "stl", "blk", "tov", "pf", "pts"]
+reduced = ['pf','tov','blk','fg_pct','fg']
 
 train_df = pd.DataFrame()
 test_df = pd.DataFrame()
 y_train = np.array([])
 y_test = np.array([])
 
-for i in stats:
-    train_data = query.get_single_stat(i, 2012, 2019)
-    test_data = query.get_single_stat(i, 2023, 2023)
+#for i in stats:
+for i in reduced:
+    train_data = query.get_single_stat(i, 2012, 2018)
+    test_data = query.get_single_stat(i, 2022, 2022)
     train_diff = []
     test_diff = []
     for j in train_data:
@@ -38,7 +40,7 @@ print(qda.score(x_test, y_test))
 
 gg = qda.predict(x_test)
 qq = qda.predict_log_proba(x_test)
-print("probabilities: " + str(qq))
+#print("probabilities: " + str(qq))
 print("predicted: " + str(gg))
 print("actual: " + str(y_test))
 

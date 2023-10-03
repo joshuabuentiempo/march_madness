@@ -14,7 +14,7 @@ y_train = np.array([])
 y_test = np.array([])
 
 for i in stats:
-    train_data = query.get_single_stat(i, 2012, 2019)
+    train_data = query.get_single_stat(i, 2012, 2018)
     test_data = query.get_single_stat(i, 2023, 2023)
     train_diff = []
     test_diff = []
@@ -39,7 +39,5 @@ print(str(stats))
 print(log_reg.score(x_test, y_test))
 
 gg = log_reg.predict(x_test)
-qq = log_reg.predict_log_proba(x_test)
-print("probabilities: " + str(qq))
 print("predicted: " + str(gg))
 print("actual: " + str(y_test))
